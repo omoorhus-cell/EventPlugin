@@ -1,0 +1,44 @@
+name: EventPlugin
+version: '1.0'
+main: org.tekkabyte.eventPlugin.EventPlugin
+api-version: '1.21'
+author: TekkaByte
+
+commands:
+  event:
+    description: Main event command
+    usage: /event <start|join|leave|end|setlocation|info>
+    permission: eventplugin.event
+  eventadmin:
+    description: Admin event commands
+    usage: /eventadmin <create|delete|setborder>
+    permission: eventplugin.admin
+  ecraft:
+    description: Open the custom crafting GUI
+    usage: /ecraft <player>
+    permission: craftevents.use
+  craftadmin:
+    description: Open the admin recipe editor
+    usage: /craftadmin
+    permission: craftevents.admin
+  setrecipe:
+    description: Set a recipe from your inventory (held item = result, inventory = materials)
+    usage: /setrecipe <name>
+    permission: craftevents.admin
+
+permissions:
+  craftevents.use:
+    description: Allows players to use the crafting GUI
+    default: true
+  craftevents.admin:
+    description: Allows admins to manage recipes
+    default: op
+  eventplugin.event:
+    description: Allows players to join events
+    default: true
+  eventplugin.admin:
+    description: Allows event administration
+    default: op
+  eventplugin.start:
+    description: Allows starting events
+    default: op

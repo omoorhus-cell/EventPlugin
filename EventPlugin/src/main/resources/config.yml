@@ -1,0 +1,124 @@
+# MinecraftEvents Plugin Configuration
+database:
+  sqlite-file: "data.db"
+
+settings:
+  gui-title: "Custom Crafting"
+  admin-gui-title: "Recipe Editor"
+# UHC Settings
+uhc:
+  world-border-size: 1000
+  world-border-shrink-time: 3600 # seconds
+  world-border-final-size: 100
+  world-name-prefix: "uhc_"
+  delete-world-on-end: true
+
+  # Game rules
+  natural-regen: false
+  lock-join-after-start: true
+  deny-rejoin-after-death: true
+
+  # Waiting box (pre-start lobby)
+  waiting-box:
+    enabled: true
+    center-x: 0
+    center-y: 150
+    center-z: 0
+    radius: 6
+    height: 5
+    wall-material: GLASS
+    floor-material: WHITE_CONCRETE
+    roof-material: GLASS
+
+# Tournament Settings
+tournament:
+  world: "tournament"
+  create-world-if-missing: true
+  delete-world-on-end: false
+
+  # Where everyone gets sent when the tournament STARTS (before first match)
+  start:
+    set: true
+    x: 0
+    y: -57
+    z: 0
+    yaw: 0
+    pitch: 0
+
+  # Where non-fighters wait between matches
+  lobby:
+    set: true
+    x: 0
+    y: -57
+    z: 0
+    yaw: 0
+    pitch: 0
+
+  # OPTIONAL: Exact match spawns (overrides the arena-size math)
+  match-spawns:
+    team0:
+      set: true
+      x: 0
+      y: -57
+      z: -20
+      yaw: 90
+      pitch: 0
+    team1:
+      set: true
+      x: 0
+      y: -57
+      z: 21
+      yaw: -90
+      pitch: 0
+
+  # Commands blocked while inside event world
+  blocked-commands:
+    - "pv"
+    - "playervault"
+    - "playerv"
+    - "vault"
+    - "backpack"
+    - "bp"
+
+# Messages
+messages:
+
+  # Event lifecycle
+  event-created: "&a[Event] {type} event created. Players can now &e/event join&a."
+  event-started: "&6[Event] {type} has started!"
+  event-ended: "&c[Event] {type} has ended."
+  event-already-created: "&c[Event] An event is already created."
+  event-not-created: "&c[Event] No event has been created yet."
+
+  # Joining / leaving
+  joined-event: "&a[Event] You joined the event!"
+  left-event: "&c[Event] You left the event."
+
+  already-in-event: "&c[Event] You are already in the event."
+  not-in-event: "&c[Event] You are not in the event."
+  no-active-event: "&c[Event] There is no active event."
+
+  event-already-started: "&c[Event] This event has already started. You cannot join now."
+
+  # UHC specific
+  uhc-join-box: "&e[UHC] You are in the starting box. Waiting for the event to start."
+  uhc-eliminated: "&c[UHC] You have been eliminated!"
+  uhc-eliminated-no-rejoin: "&c[UHC] You are eliminated and cannot rejoin this UHC."
+  uhc-winner: "&6[UHC] Winner: &e{player}"
+
+  # Tournament specific
+  tournament-joined-lobby: "&e[Tournament] Joined lobby. Waiting for admin to start."
+  tournament-match-start: "&e[Tournament] Match starting!"
+  tournament-match-win: "&a[Tournament] You won your match!"
+  tournament-eliminated: "&c[Tournament] You have been eliminated!"
+  tournament-winner: "&6[Tournament] Winner: &e{player}"
+  tournament-winning-team: "&6[Tournament] Winning Team: &e{players}"
+
+  # Command restrictions
+  command-blocked: "&c[Event] This command is blocked during events."
+
+  # Admin / setup
+  location-set: "&a[Event] Tournament spawn location set."
+
+  # Generic fallback
+  unknown-error: "&c[Event] Something went wrong. Please contact staff."
